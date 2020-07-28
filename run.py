@@ -1,10 +1,7 @@
 import os
 from flask import Flask, render_template
 
-# __name__ is the name of the module we are using, if its
-# a single module we can just write __name__
 app = Flask(__name__)
-
 
 @app.route("/")
 def index():
@@ -19,6 +16,7 @@ def about():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
 
 @app.route("/careers")
 def careers():
