@@ -1,13 +1,13 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 
 # __name__ is the name of the module we are using, if its 
 # a single module we can just write __name__
-app = flask(__name__)
+app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Hello, World"
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
@@ -15,4 +15,3 @@ if __name__ == "__main__":
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT", "5000")),
         debug=True)
-    
