@@ -1,9 +1,10 @@
 import os
 from flask import Flask, render_template
 
-# __name__ is the name of the module we are using, if its 
+# __name__ is the name of the module we are using, if its
 # a single module we can just write __name__
 app = Flask(__name__)
+
 
 @app.route("/")
 def index():
@@ -14,9 +15,11 @@ def index():
 def about():
     return render_template("about.html")
 
+
 @app.route("/contact")
-def about():
+def contact():
     return render_template("contact.html")
+
 
 if __name__ == "__main__":
     app.run(
