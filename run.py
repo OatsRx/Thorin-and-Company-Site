@@ -1,6 +1,7 @@
 import os
 import json
 from flask import Flask, render_template, request, flash
+
 if os.path.exists("env.py"):
     import env
 
@@ -24,7 +25,7 @@ def about():
 # angle brackets (<member_name>) will pass in the data from the
 # url path into the view below. This parameter has been called member_name
 # whenever we look at the about url with anything after it that will be
-# passed into this view 
+# passed into this view
 @app.route("/about/<member_name>")
 def about_member(member_name):
     member = {}
